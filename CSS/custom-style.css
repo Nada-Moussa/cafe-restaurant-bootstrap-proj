@@ -17,8 +17,8 @@
 
 body {
     background-color: rgb(var(--bs-success-rgb)); 
-    /* max-width: 100%;
-    overflow-x: hidden; */
+    max-width: 100%;
+    overflow-x: hidden;
     /* height: 65vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pattern.jpg);
     background-size: cover; 
