@@ -5,6 +5,7 @@
     --bs-warning-rgb: 84, 51, 16;
 }
 
+
 /* Ensure dropdown appears above all content */
 .navbar {
   z-index: 1050; /* higher than images and banner */
@@ -13,6 +14,10 @@
 .dropdown-menu {
   position: absolute; /* ensure it's not constrained */
   z-index: 2000;      /* extra high so it's always on top */
+}
+
+a {
+  color: rgb(var(--bs-primary-rgb));
 }
 
 body {
