@@ -17,8 +17,8 @@
 
 body {
     background-color: rgb(var(--bs-success-rgb)); 
-    max-width: 100%;
-    overflow-x: hidden;
+    /* max-width: 100%;
+    overflow-x: hidden; */
     /* height: 65vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pattern.jpg);
     background-size: cover; 
@@ -26,14 +26,12 @@ body {
 }
 
 .body_form {
-    height: 65vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/coffee_pattern.jpg);
     background-size: cover; 
     background-position: center; 
 }
 
 .hero {
-    height: 65vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/cafe_hero.jpg);
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -41,7 +39,6 @@ body {
 }
 
 .card-bg {
-    height: 65vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pattern.jpg);
     background-repeat: no-repeat; 
     background-size: cover; 
