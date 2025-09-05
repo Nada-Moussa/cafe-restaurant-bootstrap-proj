@@ -63,28 +63,28 @@
     <div class="position-relative mt-5 pt-4">
 
         <!-- Banner -->
-        <div class="row">
-            <div class="col-3 p-0">
+        <div class="row g-0">
+            <div class="col-12 col-md-6 col-lg-3 p-0">
                 <img class="w-100" src="images/image1.jpg" alt="">
             </div>
-            <div class="col-3 p-0">
+            <div class="col-12 col-md-6 col-lg-3 p-0 d-none d-md-block d-lg-block">
                 <img class="w-100" src="images/image2.jpg" alt="">
             </div>
-            <div class="col-3 p-0">
+            <div class="col-12 col-md-6 col-lg-3 p-0 d-none d-lg-block">
                 <img class="w-100" src="images/image3.jpeg" alt="">
             </div>
-            <div class="col-3 p-0">
+            <div class="ccol-12 col-md-6 col-lg-3 p-0 d-none d-lg-block">
                 <img class="w-100" src="images/image4.jpg" alt="">
             </div>
         </div>
 
         <!-- Conent -->
-        <div class="position-absolute top-50 start-50 translate-middle text-center">
-            <div class="bg-info bg-opacity-50 p-3">
-                <h1 class="text-primary">About Us</h1>
+        <div class="position-absolute top-50 start-50 translate-middle text-center w-100 pt-3">
+            <div class="bg-info bg-opacity-50 p-3 mx-auto" style="max-width: 700px;">
+                <h1 class="text-primary pt-3">About Us</h1>
                 <p class="text-primary fs-5 fw-light p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Maxime repellat porro corrupti mollitia quisquam. Placeat suscipit repellat eum quisquam molestiae
-                    nihil libero sit adipisci error aspernatur asperiores, possimus, amet blanditiis?</p>
+                    Maxime repellat porro corrupti mollitia quisquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Maxime repellat porro corrupti.</p>
             </div>
             <a href="#contact">
                 <button type="button" class="mt-2 btn btn-warning text-primary">Contact Us</button>
@@ -196,11 +196,12 @@
     </div>
 
     <!--About Body-->
-    <div class="row p-3 bg-gradient">
-        <div class="col-6 d-flex flex-column align-items-center">
+    <div class="container-fluid bg-gradient">
+    <div class="row">
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center">
             <h2 class="text-center p-2 text-warning fw-semibold fw-bold">Our Values</h2>
             <!--Values List Group-->
-            <ul class="col-9 list-group text-center">
+            <ul class="col-8 list-group text-center">
                 <li class="list-group-item border-primary bg-info bg-opacity-50 text-primary fw-semibold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-1-circle-fill" viewBox="0 0 16 16">
@@ -246,12 +247,14 @@
                 </li>
             </ul>
         </div>
+        
 
 
         <!--Working Hours Table-->
-        <div class="col-6 d-flex flex-column">
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center">
             <h2 class="text-center p-2 text-warning fw-bold">Our Working Hours</h2>
-            <table class="container w-50 text-center table-primary table table-striped table-bordered">
+            <div class="col-10 col-md-8 col-lg-6">
+            <table class="table table-primary table-striped table-bordered text-center w-100 mx-auto">
                 <thead>
                     <tr class="table-active">
                         <th scope="col">Day</th>
@@ -289,44 +292,48 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
+    </div>
     </div>
 
     <!--Footer-->
-    <div class="row bg-warning">
-        <div class="col-4 ps-5">
-            <div class="card border-0">
-                <div class="card-body bg-warning">
-                    <h5 class="card-title text-primary fw-light">Cafe</h5>
-                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
-                        content.</p>
+    <div class="container-fluid bg-warning">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card border-0">
+                    <div class="card-body bg-warning">
+                        <h5 class="card-title text-primary fw-light">Cafe</h5>
+                        <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="card border-0">
-                <div class="card-body bg-warning">
-                    <h5 class="card-title text-primary fw-light" id="contact">Contact Us</h5>
-                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
-                        content.</p>
+            <div class="col-12 col-md-4">
+                <div class="card border-0">
+                    <div class="card-body bg-warning">
+                        <h5 class="card-title text-primary fw-light" id="contact">Contact Us</h5>
+                        <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4 pe-5">
-            <div class="card border-0">
-                <div class="card-body bg-warning">
-                    <h5 class="card-title text-primary fw-light">Feedback</h5>
-                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
-                        content.</p>
+            <div class="col-12 col-md-4">
+                <div class="card border-0">
+                    <div class="card-body bg-warning">
+                        <h5 class="card-title text-primary fw-light">Feedback</h5>
+                        <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-info container-fluid px-5 d-flex align-items-center justify-content-center py-0">
-        <p class="px-5 m-0">© Cafe. All Rights Reserved</p>
-        <p class="px-5 m-0">Privacy Policy</p>
-        <p class="px-5 m-0">Terms Of Service</p>
-        <p class="px-5 m-0">Accessibility</p>
+    <div class="bg-info container-fluid px-5 d-flex flex-wrap justify-content-center text-center py-2">
+        <p class="px-3 m-1 w-100 w-md-auto">© Cafe. All Rights Reserved</p>
+        <p class="px-3 m-1 w-100 w-md-auto">Privacy Policy</p>
+        <p class="px-3 m-1 w-100 w-md-auto">Terms Of Service</p>
+        <p class="px-3 m-1 w-100 w-md-auto">Accessibility</p>
     </div>
 
     <script src="JS/bootstrap.bundle.min.js"></script>
