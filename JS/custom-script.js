@@ -1,74 +1,69 @@
 // Run everything after the DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
-  // ---------------------------
-  // Reservation Submittion Alert
-  // ---------------------------
 
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-  const appendAlert = (message, type) => {
-    const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-      `   <div>${message}</div>`,
-      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-      '</div>'
-    ].join('')
-
-    alertPlaceholder.append(wrapper)
-  }
-
-  // const alertTrigger = document.getElementById('liveAlertBtn')
-  // if (alertTrigger) {
-  //   alertTrigger.addEventListener('click', () => {
-  //     appendAlert('Reservation Confirmed. Thank you!', 'success')
-  //   })
-  // }
   // ---------------------------
-  // Feedback Form & Modal (only if present on this page)
+  // Default Alert Helper
   // ---------------------------
-  const form = document.querySelector('.needs-validation');
-  if (form) {
+  const defaultAlertPlaceholder = document.getElementById('liveAlertPlaceholder');
+
+  const appendAlert = (message, alertTarget) => {
+    if (!alertTarget) return;
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <div>${message}</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+    alertTarget.append(wrapper);
+  };
+
+  // ---------------------------
+  // Form Submission Handler
+  // Works for both Feedback and Reservation forms
+  // ---------------------------
+  function handleFormSubmit(form, modalId = null, showAlertMessage = null, progressFunc = null, alertTarget = null) {
     form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        // If not valid, prevent default submission and stop propagation
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        // If form is valid, prevent default submission and show modal
-        event.preventDefault();
-        // Reservation page alert (only if alertPlaceholder exists)
-        if (alertPlaceholder) {
-          appendAlert('Reservation Confirmed. Thank you!', 'success');
-        }
-        // Get the modal element by its ID
-        const feedbackModal = document.getElementById('feedbackModal');
-        if (feedbackModal && typeof bootstrap !== 'undefined') {
-          const modal = new bootstrap.Modal(feedbackModal);
-          modal.show();
-        }
-        // Reset form after successful submission
-        form.classList.remove('was-validated');
-        form.reset();
-        // Add the validation class to trigger the visual feedback
-        form.classList.add('was-validated')
+      event.preventDefault(); // prevent default submission
 
-        // Reset progress bar if present
-        if (typeof updateProgressBar === 'function') {
-        updateProgressBar();
-        }
-        
+      if (!form.checkValidity()) {
+        // Invalid form: show validation styles
+        form.classList.add('was-validated');
+        return;
       }
 
-      form.classList.add('was-validated');
+      // Valid form: show modal if provided
+      if (modalId) {
+        const modalEl = document.getElementById(modalId);
+        if (modalEl && typeof bootstrap !== 'undefined') {
+          const modal = new bootstrap.Modal(modalEl);
+          modal.show();
+        }
+      }
+
+      // Show alert if message provided
+      if (showAlertMessage) {
+        appendAlert(showAlertMessage, alertTarget || defaultAlertPlaceholder);
+      }
+
+      // Reset form and validation state
+      form.reset();
+      form.classList.remove('was-validated');
+
+      // Reset progress bar if function provided
+      if (progressFunc && typeof progressFunc === 'function') {
+        progressFunc();
+      }
     }, false);
   }
 
   // ---------------------------
-  // Progress Bar (only if feedback form exists)
+  // Feedback Form & Progress Bar
   // ---------------------------
   const feedbackForm = document.getElementById('feedbackForm');
   const progressBar = document.getElementById('formProgress');
   const progressPercentage = document.getElementById('progressPercentage');
+
+  let updateProgressBar = null;
 
   if (feedbackForm && progressBar && progressPercentage) {
     const requiredFields = feedbackForm.querySelectorAll('[required]');
@@ -78,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return field.value.trim() !== '';
     }
 
-    function updateProgressBar() {
+    updateProgressBar = function() {
       let filledCount = 0;
       requiredFields.forEach(field => {
         if (isFieldFilled(field)) filledCount++;
@@ -93,85 +88,97 @@ document.addEventListener('DOMContentLoaded', function () {
       field.addEventListener('input', updateProgressBar);
     });
 
+    // Initialize progress bar
     updateProgressBar();
   }
 
-// ---------------------------
-// Pagination 
-// ---------------------------
-const tabPanes = document.querySelectorAll('.tab-pane'); // all tab sections
-
-tabPanes.forEach(pane => {
-  const pageContents = pane.querySelectorAll('.page-content');
-  const pageBtns = pane.querySelectorAll('.page-btn');
-  const prevBtn = pane.querySelector('.prev-btn');
-  const nextBtn = pane.querySelector('.next-btn');
-
-  if (pageContents.length === 0) return; // skip tabs without pagination
-
-  let currentPage = 1;
-  const totalPages = pageContents.length;
-
-  function showPage(n) {
-    n = Math.max(1, Math.min(n, totalPages));
-
-    // hide all pages in this tab
-    pageContents.forEach(p => p.classList.add('d-none'));
-
-    // show selected page
-    const selected = pane.querySelector(`#${pageContents[n - 1].id}`);
-    if (selected) selected.classList.remove('d-none');
-
-    // update active state
-    pageBtns.forEach(btn => {
-      const p = Number(btn.dataset.page);
-      btn.parentElement.classList.toggle('active', p === n);
-    });
-
-    // disable prev/next appropriately
-    if (prevBtn?.parentElement) {
-      prevBtn.parentElement.classList.toggle('disabled', n === 1);
-    }
-    if (nextBtn?.parentElement) {
-      nextBtn.parentElement.classList.toggle('disabled', n === totalPages);
-    }
-
-    currentPage = n;
+  if (feedbackForm) {
+    handleFormSubmit(feedbackForm, 'feedbackModal', null, updateProgressBar, defaultAlertPlaceholder);
   }
 
-  // page number clicks
-  pageBtns.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      showPage(Number(btn.dataset.page));
+  // ---------------------------
+  // Reservation Form
+  // ---------------------------
+  const reservationForm = document.getElementById('reservationForm');
+  const reservationAlertPlaceholder = document.getElementById('reservationAlertPlaceholder');
+  if (reservationForm) {
+    handleFormSubmit(reservationForm, null, 'Reservation Confirmed. Thank you!', null, reservationAlertPlaceholder);
+  }
+
+  // ---------------------------
+  // Pagination 
+  // ---------------------------
+  const tabPanes = document.querySelectorAll('.tab-pane'); // all tab sections
+
+  tabPanes.forEach(pane => {
+    const pageContents = pane.querySelectorAll('.page-content');
+    const prevBtn = pane.querySelector('.prev-btn');
+    const nextBtn = pane.querySelector('.next-btn');
+    const pageBtns = pane.querySelectorAll('.page-btn');
+    if (pageContents.length === 0) return; // skip tabs without pagination
+
+    let currentPage = 1;
+    const totalPages = pageContents.length;
+
+    function showPage(n) {
+      n = Math.max(1, Math.min(n, totalPages));
+
+      // hide all pages in this tab
+      pageContents.forEach(p => p.classList.add('d-none'));
+
+      // show selected page
+      const selected = pane.querySelector(`#${pageContents[n - 1].id}`);
+      if (selected) selected.classList.remove('d-none');
+
+      // update active state
+      pageBtns.forEach(btn => {
+        const p = Number(btn.dataset.page);
+        btn.parentElement.classList.toggle('active', p === n);
+      });
+
+      // disable prev/next appropriately
+      if (prevBtn?.parentElement) {
+        prevBtn.parentElement.classList.toggle('disabled', n === 1);
+      }
+      if (nextBtn?.parentElement) {
+        nextBtn.parentElement.classList.toggle('disabled', n === totalPages);
+      }
+
+      currentPage = n;
+    }
+
+    // page number clicks
+    pageBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        showPage(Number(btn.dataset.page));
+      });
     });
-  });
 
-  // prev/next
-  prevBtn?.addEventListener('click', e => {
-    e.preventDefault();
-    showPage(currentPage - 1);
-  });
-  nextBtn?.addEventListener('click', e => {
-    e.preventDefault();
-    showPage(currentPage + 1);
-  });
+    // prev/next
+    prevBtn?.addEventListener('click', e => {
+      e.preventDefault();
+      showPage(currentPage - 1);
+    });
+    nextBtn?.addEventListener('click', e => {
+      e.preventDefault();
+      showPage(currentPage + 1);
+    });
 
-  // init this tab
-  showPage(1);
-});
+    // init this tab
+    showPage(1);
+  });
 
   // ---------------------------
   // Best seller toast 
   // ---------------------------
-  // Run everything after the DOM is ready
   const toastEl = document.getElementById("liveToast");
-    if (toastEl) {
-      const toast = new bootstrap.Toast(toastEl, {
-        delay: 3000 // Auto-hide after 3 seconds
-      });
-      toast.show();
-    }
+  if (toastEl) {
+    const toast = new bootstrap.Toast(toastEl, {
+      delay: 3000 // Auto-hide after 3 seconds
+    });
+    toast.show();
+  }
 
   // ---------------------------
   // Accordion Spinner Handling
@@ -201,6 +208,5 @@ tabPanes.forEach(pane => {
       });
     });
   }
-
 
 });
