@@ -15,6 +15,8 @@
 .dropdown-menu {
   position: absolute; /* ensure it's not constrained */
   z-index: 2000;      /* extra high so it's always on top */
+  --bs-dropdown-link-active-color: rgb(var(--bs-warning-rgb));
+  --bs-dropdown-link-active-bg: rgb(var(--bs-primary-rgb));
 }
 
 a {
