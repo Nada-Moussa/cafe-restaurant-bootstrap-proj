@@ -1,0 +1,108 @@
+:root {
+    --bs-primary-rgb: 248, 244, 225;
+    --bs-success-rgb: 175, 143, 111;
+    --bs-info-rgb: 116, 81, 45;
+    --bs-warning-rgb: 84, 51, 16;
+}
+
+/* Ensure dropdown appears above all content */
+.navbar {
+  z-index: 1050; /* higher than images and banner */
+}
+
+.dropdown-menu {
+  position: absolute; /* ensure it's not constrained */
+  z-index: 2000;      /* extra high so it's always on top */
+}
+
+body {
+    background-color: rgb(var(--bs-success-rgb)); 
+    /* height: 65vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pattern.jpg);
+    background-size: cover; 
+    background-position: center;  */
+}
+
+.body_form {
+    height: 65vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/coffee_pattern.jpg);
+    background-size: cover; 
+    background-position: center; 
+}
+
+.hero {
+    height: 65vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/cafe_hero.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.card-bg {
+    height: 65vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/pattern.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.dropdown-item {
+    color: rgb(var(--bs-primary-rgb));
+}
+
+.btn.btn-warning {
+    background-color: rgb(var(--bs-warning-rgb),0.8);
+    border: 0px;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(var(--bs-success-rgb));
+}
+
+.btn-outline-primary {
+  --bs-btn-color: rgb(var(--bs-primary-rgb));
+  --bs-btn-border-color: rgb(var(--bs-warning-rgb));
+  --bs-btn-active-color: rgb(var(--bs-primary-rgb));
+  --bs-btn-active-bg: rgb(var(--bs-primary-rgb));
+  --bs-btn-active-border-color: rgb(var(--bs-primary-rgb));
+}
+
+/* .btn-warning {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #ffc107;
+  --bs-btn-border-color: #ffc107;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #ffca2c;
+  --bs-btn-hover-border-color: #ffc720;
+  --bs-btn-focus-shadow-rgb: 217, 164, 6;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ffcd39;
+  --bs-btn-active-border-color: #ffc720;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #ffc107;
+  --bs-btn-disabled-border-color: #ffc107;
+} */
+
+.card-body{
+    background-color: rgba(var(--bs-success-rgb),0.4)
+}
+
+.table-primary {
+  --bs-table-color: rgb(var(--bs-warning-rgb));
+  --bs-table-bg: rgb(var(--bs-primary-rgb));
+  --bs-table-border-color: rgb(var(--bs-warning-rgb));
+  --bs-table-striped-bg: rgba(var(--bs-info-rgb),0.2);
+  --bs-table-striped-color: rgb(var(--bs-warning-rgb));
+  --bs-table-active-bg: rgb(var(--bs-info-rgb));
+  --bs-table-active-color: rgb(var(--bs-primary-rgb));
+  --bs-table-hover-bg: rgb(var(--bs-successrgb));
+  --bs-table-hover-color: rbg(var(--bs-warning-rgb));
+  color: rgb(var(--bs-warning-rgb));
+  border-color: var(--bs-table-border-color);
+}
+
+#liveAlertPlaceholder .alert-success {
+  background-color: rgb(var(--bs-primary-rgb)); /* light green background */
+  color: rgb(var(--bs-warning-rgb));  
+  border: 0;         /* dark green text */
+}

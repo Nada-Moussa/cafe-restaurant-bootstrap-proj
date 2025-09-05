@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/custom-style.css">
+</head>
+
+<body class="body_form">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-warning fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand  text-primary" href="index.html">Name</a>
+            <button class="navbar-toggler bg-primary text-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-success dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu bg-success bg-opacity-75">
+                            <li><a class="dropdown-item" href="menu.html">Full Menu</a></li>
+                            <li><a class="dropdown-item" href="index.html#signature">Signature Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="reserve.html">Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="feedback.html">Feedback</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!--Reservations Form-->
+    <div class="mt-5 p-5 bg-warning bg-opacity-50">
+        <h2 class="text-primary">Reserve Your Table!</h2>
+        <h3 class="text-primary">We would be delighted to have you.</h3>
+        <form class="row g-3 d-flex flex-column needs-validation" id="feedbackForm" novalidate>
+            <!--FirstName-->
+            <div class="col-md-4">
+                <label for="validationServer01" class="form-label text-primary fw-semibold">First name</label>
+                <input type="text" class="form-control" id="validationServer01" placeholder="Enter your first name"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your first name.
+                </div>
+            </div>
+            <!--LastName-->
+            <div class="col-md-4">
+                <label for="validationServer02" class="form-label text-primary fw-semibold">Last name</label>
+                <input type="text" class="form-control" id="validationServer02" placeholder="Enter your last name"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your last name.
+                </div>
+            </div>
+            <!--Branch Radio-->
+            <div class="col-md-4">
+                <label class="form-label text-primary fw-semibold">Reservation Location</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" required>
+                    <label class="form-check-label text-primary fw-bold" for="radioDefault1">
+                        Branch 1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2">
+                    <label class="form-check-label text-primary fw-bold" for="radioDefault2">
+                        Branch 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3">
+                    <label class="form-check-label1 text-primary fw-bold" for="radioDefault3">
+                        Branch 3
+                    </label>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a branch for reservation.
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Guest Number-->
+            <div class="col-md-4">
+                <label class="form-label text-primary fw-semibold">Number of Guests</label>
+
+                <div class="btn-group d-flex flex-wrap" role="group" aria-label="Number of Guests">
+                    <input type="radio" class="btn-check" name="guests" id="guest1" value="1" required>
+                    <label class="btn btn-outline-primary bg-warning bg-opacity-75 fw-semibold" for="guest1">1</label>
+
+                    <input type="radio" class="btn-check" name="guests" id="guest2" value="2">
+                    <label class="btn btn-outline-primary bg-warning bg-opacity-75 fw-semibold" for="guest2">2</label>
+
+                    <input type="radio" class="btn-check" name="guests" id="guest3" value="3">
+                    <label class="btn btn-outline-primary bg-warning bg-opacity-75 fw-semibold" for="guest3">3</label>
+
+                    <input type="radio" class="btn-check" name="guests" id="guest4" value="4">
+                    <label class="btn btn-outline-primary bg-warning bg-opacity-75 fw-semibold" for="guest4">4</label>
+
+                    <input type="radio" class="btn-check" name="guests" id="guest5" value="5+">
+                    <label class="btn btn-outline-primary bg-warning bg-opacity-75 fw-semibold" for="guest5">5+</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please select the number of guests.</div>
+                </div>
+
+            </div>
+
+
+            <!--Email-->
+            <div class="col-md-4">
+                <label for="validationServerEmail" class="form-label text-primary fw-semibold">Email address</label>
+                <input type="email" class="form-control" id="validationServerEmail" placeholder="name@example.com"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid email address.
+                </div>
+            </div>
+            <!--Mobile Number-->
+            <div class="col-md-4">
+                <label for="validationServerNum" class="form-label text-primary fw-semibold">Mobile Number</label>
+                <input type="tel" minlength="11" maxlength="11" class="form-control" id="validationServerNum"
+                    placeholder="Enter your contact number" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid number.
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <button class="btn btn-warning text-primary" id="liveAlertBtn" type="submit">Submit</button>
+                <div id="liveAlertPlaceholder" class="py-2"></div>
+            </div>
+        </form>
+    </div>
+
+    <!--Footer-->
+    <div class="row bg-warning">
+        <div class="col-4 ps-5">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light">Cafe</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light" id="contact">Contact Us</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 pe-5">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light">Feedback</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-info container-fluid px-5 d-flex align-items-center justify-content-center py-0">
+        <p class="px-5 m-0">© Cafe. All Rights Reserved</p>
+        <p class="px-5 m-0">Privacy Policy</p>
+        <p class="px-5 m-0">Terms Of Service</p>
+        <p class="px-5 m-0">Accessibility</p>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/custom-script.js"></script>
+
+</body>
+
+</html>

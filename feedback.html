@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/custom-style.css">
+</head>
+
+<body class="body_form">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-warning fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand  text-primary" href="index.html">Name</a>
+            <button class="navbar-toggler bg-primary text-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-success dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu bg-success bg-opacity-75">
+                            <li><a class="dropdown-item" href="menu.html">Full Menu</a></li>
+                            <li><a class="dropdown-item" href="index.html#signature">Signature Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="reserve.html">Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="feedback.html">Feedback</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Breadcrumbs-->
+    <div class="container-fluid mt-5 pt-1 fixed-top bg-warning">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active text-success" aria-current="page">Feedback</li>
+            </ol>
+        </nav>
+    </div>
+
+
+
+    <!--Feedback Form-->
+    <div class="mt-5 p-5 bg-warning bg-opacity-50">
+        <h2 class="text-primary">We Value Your Feedback</h2>
+        <form class="row g-3 d-flex flex-column needs-validation" id="feedbackForm" novalidate>
+            <!--FirstName-->
+            <div class="col-md-4">
+                <label for="validationServer01" class="form-label text-primary fw-semibold">First name</label>
+                <input type="text" class="form-control" id="validationServer01" placeholder="Enter your first name"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your first name.
+                </div>
+            </div>
+            <!--LastName-->
+            <div class="col-md-4">
+                <label for="validationServer02" class="form-label text-primary fw-semibold">Last name</label>
+                <input type="text" class="form-control" id="validationServer02" placeholder="Enter your last name"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your last name.
+                </div>
+            </div>
+            <!--Email-->
+            <div class="col-md-4">
+                <label for="validationServerEmail" class="form-label text-primary fw-semibold">Email address</label>
+                <input type="email" class="form-control" id="validationServerEmail" placeholder="name@example.com"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid email address.
+                </div>
+            </div>
+            <!--Feedback-->
+            <div class="col-md-4">
+                <label for="validationServerFeedback" class="form-label text-primary fw-semibold">Feedback</label>
+                <textarea class="form-control" id="validationServerFeedback" rows="4"
+                    placeholder="Let us know how we can serve you better!" required></textarea>
+                <div class="valid-feedback">
+                    Thank you for your feedback!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide your feedback.
+                </div>
+            </div>
+            <!-- Progress Bar-->
+            <div class="col-md-4 mb-1">
+                <div class="d-flex justify-content-between">
+                    <label for="formProgress" class="form-label text-primary fw-semibold">Form Completion</label>
+                    <span id="progressPercentage" class="text-primary fw-bold">0%</span>
+                </div>
+                <div class="progress" style="height: 20px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" id="formProgress"
+                        role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-warning text-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Modal-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content text-warning bg-primary bg-opacity-75">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You for Your Feedback!</h5>
+                </div>
+                <div class="modal-body">
+                    <p>We appreciate you taking the time to share your thoughts with us.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning text-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row bg-warning">
+        <div class="col-4 ps-5">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light">Cafe</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light" id="contact">Contact Us</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 pe-5">
+            <div class="card border-0">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-primary fw-light">Feedback</h5>
+                    <p class="card-text text-success">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-info container-fluid px-5 d-flex align-items-center justify-content-center py-0">
+        <p class="px-5 m-0">© Cafe. All Rights Reserved</p>
+        <p class="px-5 m-0">Privacy Policy</p>
+        <p class="px-5 m-0">Terms Of Service</p>
+        <p class="px-5 m-0">Accessibility</p>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/custom-script.js"></script>
+
+</body>
+
+</html>

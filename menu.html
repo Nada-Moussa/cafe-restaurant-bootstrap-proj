@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/custom-style.css">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-warning fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand  text-primary" href="index.html">Name</a>
+            <button class="navbar-toggler bg-primary text-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-success dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu bg-success bg-opacity-75">
+                            <li><a class="dropdown-item" href="menu.html">Full Menu</a></li>
+                            <li><a class="dropdown-item" href="index.html#signature">Signature Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="reserve.html">Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success" href="feedback.html">Feedback</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Breadcrumbs-->
+    <div class="container-fluid mt-5 pt-1 fixed-top bg-warning">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active text-success" aria-current="page">Menu</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!--Best Seller Toast-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-warning bg-opacity-75 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
+                </svg>
+                <strong class="me-auto ps-2">Best Seller!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body bg-success bg-opacity-75 text-primary fw-semibold">
+                Our best selling item today is our <span class="text-warning fw-bold fst-italic">Banana Bread French
+                    Toast!</span>
+            </div>
+        </div>
+    </div>
+
+    <!--Tabs-->
+    <ul class="nav nav-tabs mt-5 pt-5" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="break-tab" data-bs-toggle="tab" data-bs-target="#break-tab-pane"
+                type="button" role="tab" aria-controls="break-tab-pane" aria-selected="true">Breakfast</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="bev-tab" data-bs-toggle="tab" data-bs-target="#bev-tab-pane" type="button"
+                role="tab" aria-controls="bev-tab-pane" aria-selected="false">Beverages</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pastry-tab" data-bs-toggle="tab" data-bs-target="#pastry-tab-pane"
+                type="button" role="tab" aria-controls="pastry-tab-pane" aria-selected="false">Pastries</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="sign-tab" data-bs-toggle="tab" data-bs-target="#sign-tab-pane" type="button"
+                role="tab" aria-controls="sign-tab-pane" aria-selected="false">Signature Items</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!--Breakfast Content-->
+        <div class="tab-pane fade show active" id="break-tab-pane" role="tabpanel" aria-labelledby="break-tab"
+            tabindex="0">
+            <!-- Page 1 -->
+            <div class="page-content" id="break-page-1">
+                <div class="row p-4 d-flex g-2" id="break-1">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Egg Benedict</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Club Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>English Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Mediterranean Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Ceaser Salad</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page 2 -->
+            <div class="page-content d-none" id="break-page-2">
+                <div class="row p-4 d-flex g-2" id="break-2">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Breakfast menu pagination">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link prev-btn" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-btn" href="#" data-page="1">1</a></li>
+                    <li class="page-item"><a class="page-link page-btn" href="#" data-page="2">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link next-btn" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Beverages Content-->
+        <div class="tab-pane fade" id="bev-tab-pane" role="tabpanel" aria-labelledby="bev-tab" tabindex="0">
+            <!-- Page 1 -->
+            <div class="page-content" id="break-page-1">
+                <div class="row p-4 d-flex g-2" id="break-1">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Egg Benedict</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Club Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>English Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Mediterranean Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Ceaser Salad</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page 2 -->
+            <div class="page-content d-none" id="break-page-2">
+                <div class="row p-4 d-flex g-2" id="break-2">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Beverages menu pagination">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link prev-btn" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-btn" href="#" data-page="1">1</a></li>
+                    <li class="page-item"><a class="page-link page-btn" href="#" data-page="2">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link next-btn" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Pastries Content-->
+        <div class="tab-pane fade" id="pastry-tab-pane" role="tabpanel" aria-labelledby="pastry-tab" tabindex="0">
+            <!-- Page 1 -->
+            <div class="page-content" id="break-page-1">
+                <div class="row p-4 d-flex g-2" id="break-1">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Egg Benedict</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Club Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>English Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Mediterranean Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Ceaser Salad</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page 2 -->
+            <div class="page-content d-none" id="break-page-2">
+                <div class="row p-4 d-flex g-2" id="break-2">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Pastry menu pagination">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link prev-btn" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link page-btn" href="#" data-page="1">1</a></li>
+                    <li class="page-item"><a class="page-link page-btn" href="#" data-page="2">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link next-btn" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Signature Items Content-->
+        <div class="tab-pane fade" id="sign-tab-pane" role="tabpanel" aria-labelledby="sign-tab" tabindex="0">
+            <!-- Page 1 -->
+            <div class="page-content" id="break-page-1">
+                <div class="row p-4 d-flex g-2" id="break-1">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Egg Benedict</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Club Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>English Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Mediterranean Breakfast</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Ceaser Salad</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page 2 -->
+            <div class="page-content d-none" id="break-page-2">
+                <div class="row p-4 d-flex g-2" id="break-2">
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex bg-primary align-items-center border-primary rounded-4">
+                            <div><img class="w-100 p-2 border-primary rounded-4" src="images/benedict.jpg"
+                                    alt="Egg Benedict"></div>
+                            <div>
+                                <h5>Smoked Turkey Sandwich</h5>
+                                <p>2 Poached eggs, bacon, english muffins, hollandaise sauce,
+                                    served with a side of fresh greens and tomatoes.</p>
+                                <span class="badge bg-info bg-opacity-75">139.99 EGP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/custom-script.js"></script>
+
+</body>
+
+</html>
